@@ -1,6 +1,6 @@
 <?php
     $autoload = function ($class) {
-        include("../../../backend-jrbroker/$class.php");
+        include("../../../models_2/$class.php");
     };
     spl_autoload_register($autoload);
 ?>

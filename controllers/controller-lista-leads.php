@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Email($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Email($conexaoPool->getConexao(), $conexaoPool);
 $embarcacao->listaEmail();
 ?>

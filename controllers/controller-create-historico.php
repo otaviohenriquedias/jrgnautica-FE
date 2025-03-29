@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$historico = new Historico($conexao);
+$conexaoPool = Conexao::getInstance();
+$historico = new Historico($conexaoPool->getConexao(), $conexaoPool);
 session_start();
 $historico->__set('id_cliente', $_GET['ref']);
 $historico->__set('id_usuario', $_SESSION['id_usuario']);

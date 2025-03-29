@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Usuario($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Usuario($conexaoPool->getConexao(), $conexaoPool);
 $embarcacao->listaBroker();
 ?>

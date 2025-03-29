@@ -7,8 +7,8 @@
         header('Location: index.php');
     }
     include 'config.php'; 
-    $conexao = new Conexao();
-    $captador = new Captador($conexao);
+    $conexaoPool = Conexao::getInstance(); 
+    $captador = new Captador($conexaoPool->getConexao(), $conexaoPool);
 
 ?>
 <!DOCTYPE html>

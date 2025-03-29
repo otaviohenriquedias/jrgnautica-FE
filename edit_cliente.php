@@ -7,9 +7,9 @@ if (!isset($_GET["id_cli"])) {
     header('Location: index.php');
 }
 include 'config.php';
-$conexao = new Conexao();
-$procura = new Procura($conexao);
-$cliente = new Cliente($conexao);
+$conexaoPool = Conexao::getInstance(); 
+$procura = new Procura($conexaoPool->getConexao(), $conexaoPool);
+$cliente = new Cliente($conexaoPool->getConexao(), $conexaoPool);
 $cliente->setCliente($_GET['id_cli']);
 function setReadonly()
 {

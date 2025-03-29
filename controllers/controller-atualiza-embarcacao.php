@@ -1,8 +1,8 @@
 <?php
 
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Embarcacao($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Embarcacao($conexaoPool->getConexao(), $conexaoPool);
 $_POST['valor-barco'] = str_replace('.','',$_POST['valor-barco']);
 $_POST['valor-barco'] = str_replace(',','.',$_POST['valor-barco']);
 $embarcacao->__set('propulsor', $_POST['tipo-propulsor']);

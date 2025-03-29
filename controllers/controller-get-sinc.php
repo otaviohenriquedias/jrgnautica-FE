@@ -1,9 +1,9 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$procura= new Procura($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura= new Procura($conexaoPool->getConexao(), $conexaoPool);
 $procura->setArray();
 $procura->Sincron($procura->__get('listaprocuras'));
-$dash = new Dashboard($conexao);
+$dash = new Dashboard($conexaoPool->getConexao(), $conexaoPool);
 $dash->viewProcura($procura->__get('encontradas'));
 ?>

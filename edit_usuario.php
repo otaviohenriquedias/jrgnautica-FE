@@ -7,8 +7,8 @@
         header('Location: index.php');
     }
     include 'config.php';
-    $conexao = new Conexao();
-    $usuario = new Usuario($conexao);
+    $conexaoPool = Conexao::getInstance(); // Obtém o pool de conexões
+    $usuario = new Usuario($conexaoPool->getConexao(), $conexaoPool);
     $name = explode(" ", $usuario->editaUsuario($_GET["id_user"], 'nome'));
 
 ?>

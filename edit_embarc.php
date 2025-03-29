@@ -8,10 +8,10 @@ if (!isset($_GET["id_emarb"])) {
 }
 
 include 'config.php';
-$conexao = new Conexao();
-$embarcacao = new Embarcacao($conexao);
-$interessados = new Procura ($conexao);
-$marina = new Marina ($conexao);
+$conexaoPool = Conexao::getInstance(); 
+$embarcacao = new Embarcacao($conexaoPool->getConexao(), $conexaoPool);
+$interessados = new Procura ($conexaoPool->getConexao(), $conexaoPool);
+$marina = new Marina($conexaoPool->getConexao(), $conexaoPool);
 function setReadonly()
 {
     if ($_SESSION['tipo'] == 2) {

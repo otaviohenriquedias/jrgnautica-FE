@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$procura = new Marina($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura = new Marina($conexaoPool->getConexao(), $conexaoPool);
 $procura->deletaMarina(intval($_GET['id_marina']));
 
 ?>

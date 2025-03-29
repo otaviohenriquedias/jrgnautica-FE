@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$procura = new Cliente($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura = new Cliente($conexaoPool->getConexao(), $conexaoPool);
 $procura->deletaCliente(intval($_GET['id_cliente']), $conexao);
 
 ?>

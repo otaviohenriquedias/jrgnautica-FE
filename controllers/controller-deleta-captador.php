@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$procura = new Captador($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura = new Captador($conexaoPool->getConexao(), $conexaoPool);
 $procura->deletaCaptador(intval($_GET['id_captador']));
 
 ?>

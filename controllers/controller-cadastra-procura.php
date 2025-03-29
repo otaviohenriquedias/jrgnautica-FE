@@ -1,8 +1,8 @@
 <?php
 include('config.php');
 session_start();
-$conexao = new Conexao();
-$procura = new Procura($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura = new Procura($conexaoPool->getConexao(), $conexaoPool);
 $procura->__set('modelo', $_POST['modelo-procura']);
 $procura->__set('propulsor', $_POST['tipo-propulsor']);
 $procura->__set('horas', $_POST['horas-procura']);

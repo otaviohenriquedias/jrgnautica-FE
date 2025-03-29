@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Captador($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Captador($conexaoPool->getConexao(), $conexaoPool);
 $embarcacao->listaCaptadores();
 ?>

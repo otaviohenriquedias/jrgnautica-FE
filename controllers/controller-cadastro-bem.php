@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$bem= new BEM($conexao);
+$conexaoPool = Conexao::getInstance();
+$bem= new BEM($conexaoPool->getConexao(), $conexaoPool);
 $bem->__set('modelo_bem', $_POST['modelo-bem']);
 $bem->__set('fabricante_bem', $_POST['fabricantes-barcos']);
 $bem->__set('marina_bem', $_POST['marina-bem']);

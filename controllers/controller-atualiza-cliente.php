@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$usuario = new Cliente($conexao);
+$conexaoPool = Conexao::getInstance();
+$usuario = new Cliente($conexaoPool->getConexao(), $conexaoPool);
 $usuario->__set('nome',$_POST['nome-cliente']);
 $usuario->__set('sobrenome',$_POST['sobrenome-cliente']);
 $usuario->__set('contato',$_POST['contato-cliente']);

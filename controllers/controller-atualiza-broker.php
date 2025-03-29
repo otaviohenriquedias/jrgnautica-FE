@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$usuario = new Usuario($conexao);
+$conexaoPool = Conexao::getInstance();
+$usuario = new Usuario($conexaoPool->getConexao(), $conexaoPool);
 $usuario->__set('nome',$_POST['nome-broker'].' '.$_POST['sobrenome-broker']);
 $usuario->__set('senha',$_POST['senha']);
 $usuario->__set('cpf',$_POST['cpf-broker']);

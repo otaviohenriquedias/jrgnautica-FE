@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$procura = new Email($conexao);
+$conexaoPool = Conexao::getInstance();
+$procura = new Email($conexaoPool->getConexao(), $conexaoPool);
 $procura->deletaEmail(intval($_GET['id_lead']));
 
 ?>

@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Embarcacao($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Embarcacao($conexaoPool->getConexao(), $conexaoPool);
 $valor1 = str_replace('.', '', $_POST['preco-min-consulta']);
 $valor1 = str_replace(',', '.', $valor1);
 //---------------------------------------------------------------

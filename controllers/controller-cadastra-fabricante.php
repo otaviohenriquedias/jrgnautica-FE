@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$embarcacao = new Embarcacao($conexao);
+$conexaoPool = Conexao::getInstance();
+$embarcacao = new Embarcacao($conexaoPool->getConexao(), $conexaoPool);
 $embarcacao->__set('fabricante', strtoupper($_POST['nome-fabricante']));
 $embarcacao->cadastraFabricante();
 

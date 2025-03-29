@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$estados = new Estados($conexao);
+$conexaoPool = Conexao::getInstance();
+$estados = new Estados($conexaoPool->getConexao(), $conexaoPool);
 $estados->getEstados();
 ?>

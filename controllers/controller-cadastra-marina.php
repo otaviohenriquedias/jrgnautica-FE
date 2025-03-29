@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$marina = new Marina($conexao);
+$conexaoPool = Conexao::getInstance();
+$marina = new Marina($conexaoPool->getConexao(), $conexaoPool);
 $marina->__set('cidade', $_POST['cidade-marina']);
 $marina->__set('contato', $_POST['contato-marina']);
 $marina->__set('estado', $_POST['localizacao-marina']);

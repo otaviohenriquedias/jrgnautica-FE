@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$captador = new Captador($conexao);
+$conexaoPool = Conexao::getInstance();
+$captador = new Captador($conexaoPool->getConexao(), $conexaoPool);
 $captador->__set('nome', $_POST['nome-captador']);
 $captador->__set('contato', $_POST['contato-captador']);
 $captador->__set('empresa', $_POST['empresa-captador']);

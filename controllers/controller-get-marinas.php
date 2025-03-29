@@ -1,6 +1,6 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$marina = new Marina($conexao);
+$conexaoPool = Conexao::getInstance();
+$marina = new Marina($conexaoPool->getConexao(), $conexaoPool);
 $marina->getMarinas();
 ?>

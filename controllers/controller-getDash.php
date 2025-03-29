@@ -1,7 +1,7 @@
 <?php
 include('config.php');
-$conexao = new Conexao();
-$dashboard = new Dashboard($conexao);
+$conexaoPool = Conexao::getInstance();
+$dashboard = new Dashboard($conexaoPool->getConexao(), $conexaoPool);
 echo '{ ';
     echo '"total_procuras" : ';
     echo $dashboard->getDash('procuras'); echo ', ';

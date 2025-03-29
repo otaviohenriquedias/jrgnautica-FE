@@ -1,0 +1,1198 @@
+@import '../comum/comum.css?8';
+@import 'cores.css?6';
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../_vendor/WP8/fonts/OpenSans-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../../_vendor/WP8/fonts/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../../_vendor/WP8/fonts/OpenSans-Bold.ttf');
+}
+
+
+/*Classe que faz tremer algum elemento*/
+.shake {
+	animation: shake 0.32s cubic-bezier(.36,.07,.19,.97) both;
+	animation-iteration-count: 1;
+}
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(1px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-1px, 0, 0); }
+  40%, 60% { transform: translate3d(1px, 0, 0); }
+}
+
+
+/************************* FILTRO TOP (avanÃ§ado) *************************/
+
+button.btn.filtroTopBtnAbrir {
+	z-index: 100;
+	margin: 2px;
+}
+
+.filtroTopAvisoAtivo.boxBlocker a {
+	color: yellow;
+}
+
+.filtroTopAvisoAtivo.boxBlocker {
+	opacity: 1;
+	z-index: 49;
+}
+
+.filtroTopAvisoAtivo.boxBlocker .filtroTopSubBox {
+	width: 190px;
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	border-radius: 4px;
+	padding: 2px 10px;
+	float: right;
+	font-size: 12px;
+}
+
+
+/************************* DISCO VIRTUAL *************************/
+.btnDiscoVirtual {
+	cursor: pointer;
+}
+
+.btnDiscoVirtual.estiloTituloForm {
+	display: inline-block;
+	float: right;
+	margin: 0 20px 0 0;
+	color: #444;
+	background: #FAFAFA;
+	padding: 10px;
+	border-radius: 10px 10px 0 0;
+}
+
+
+/************************* BARRA LATERAL *************************/
+
+#lateralBar {
+	background-color: #fcfcfc;
+	height: calc(100% - 65px);
+	width: 100%;
+	max-width: 400px;
+	position: fixed;
+	top: 65px;
+	right: -400px;
+	overflow-y: auto;
+	z-index: 30;
+}
+
+@media (max-width: 991px) {
+	#lateralBar {
+		height: calc(100% - 45px) !important;
+		top: 45px !important;
+	}
+}
+
+#lateralBar.lateralBarOpened {
+	right: 0;
+}
+
+#lateralBar .lateralBarCloser {
+	float: right;
+	font-size: 32px;
+	color: #BFBFBF;
+	cursor: pointer;
+	margin: 10px 10px 0 0;
+}
+
+#lateralBar .lateralBarCloser:hover {
+	color: darkred;
+}
+
+#lateralBar .lateralBarBox {
+	margin: 20px;
+}
+
+#lateralBar .lateralBarMarcaDagua {
+	font-size: 130px;
+	color: #efefef;
+	position: absolute;
+	z-index: -1;
+	top: -10px;
+	left: -10px;
+}
+
+
+/************************* AVISO NOVO CADASTRO *************************/
+
+.insideAvisoBox {
+	background: #52B7B7;
+	width: 95%;
+	max-width: 600px;
+	margin: 0 auto 10px auto;
+	padding: 10px;
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 15px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+}
+
+.insideAvisoBox .fa-times {
+	float: right;
+	cursor: pointer;
+	color: #2A5B5B;
+
+}
+
+.insideAvisoBox h3 {
+	font-size: 14px;
+	font-weight: bold;
+	padding: 0 0 5px 0;
+	margin: 0;
+	color: #C3E5E5;
+
+}
+
+.insideAvisoBox table thead { /*style cabeÃ§alho da table*/
+	font-size: 11px;
+	color: #2A5B5B;
+
+}
+
+.insideAvisoBox table {
+	width: 100%;
+}
+
+.insideAvisoBox td{ /*style linha*/
+	color: #fff;
+}
+
+.insideAvisoBox button{
+  background-color: #DCF2F2;
+  padding: 1px 14px;
+  border: none;
+	  border: 1px solid #4688A3;
+	  color: #2A5B5B;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 90%;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  .insideAvisoBox button:hover{
+    background-color: #D3EAEA;
+  }
+
+  .insideAvisoBox button:active{
+    background-color: #BCBCBC;
+    box-shadow: inset 2px 2px 8px #bcbcbc;
+  }
+
+
+  /************************* ESTRUTURA *************************/
+#linkExpertEgestor .badge {
+	background: #d9534f;
+	position: absolute;
+	font-size: 10px;
+	top: 5px;
+	right: 5px;
+	padding: 3px 5px;
+}
+
+body {
+	color: #777;
+}
+
+.title-row {
+	height: 65px;
+	background-color: #648493;
+	/*margin-top: 65px !important;*/
+
+	-webkit-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.4);
+	-moz-box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.4);
+	box-shadow: inset 0px 0px 6px 0px rgba(0,0,0,0.4);
+
+}
+
+.title{
+	color: #fff;
+	/* text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);*/
+}
+
+.logoEmpresa {
+	width: 150px;
+	height: 60px;
+	margin-top: 2px;
+	margin-right: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logoEmpresa img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.user-btn .headerNomeEmpresa {
+	text-transform: uppercase;
+	color: #8C8C8C;
+	font-weight: 100;
+}
+
+.user-btn .fa-angle-down {
+	margin-top: 15px;
+	float:right !important;
+}
+
+.avatar {
+	width: 40px;
+	height: 40px;
+	margin: 0 5px 0 5px;
+	background: url('img/no-user.png') center no-repeat;
+	border-radius: 20px;
+}
+
+.BuscaGeral:active, .BuscaGeral:focus, .BuscaGeral:hover{
+	color: #333;
+}
+
+.engloba-meses {
+	padding: 0 !important;
+}
+
+.pai-carrossel-meses {
+	width: 230px;
+}
+
+@media (max-width: 740px) {
+	.pai-carrossel-meses {
+		margin-bottom: 10px;
+	}
+}
+
+@media (min-width: 740px) {
+	.pai-carrossel-meses {
+		float: right
+	}
+}
+
+.btn-carrossel-meses {
+	width: 200px;
+}
+
+.CalendarioMeses table {
+	width: 100%;
+}
+
+.CalendarioMeses table td {
+	text-align: center;
+	height: 35px;
+	color: #4C5B5C;
+}
+
+.CalendarioMeses table td:hover {
+	cursor: pointer;
+	background: #00CECB; /*3C6E71*/
+	color:#fff;
+	border-radius: 8px;
+}
+
+.CalendarioMesesMudaAno{
+	font-size: 1.4em;
+}
+
+#FootMsgBox {
+	background: #f4f7be;
+	border-radius: 5px 5px 0 0;
+	position: fixed;
+	bottom: 0px;
+	margin: 0 auto;
+	padding: 10px;
+	display: none;
+}
+
+.painel-novo{
+  padding: 30px 2%;
+  background: #eee;
+  border-radius: 4px;
+  border: solid 1px #e5e5e5;
+}
+
+.painel-alerta {
+    border: none;
+    /*background-color: rgba(255, 205, 58, 0.7);*/
+    background-color: #FFF59D;
+    color: #656565;
+		padding: 15px 2%;
+    border-radius: 4px;
+		margin-bottom: 5px;
+}
+
+.painel-novo:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.fa.blue {
+	color: #1976d2;
+}
+
+h4{
+  font-size: 16px;
+  color: #777;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+
+
+/* Adicionadas */
+.imprimir {
+  padding: 1px 12px !important;
+  height: auto;
+  line-height: 35px;
+  color: #828282 !important;
+  background-color: #fff !important;
+  border: 1px solid #C1C1C1;
+}
+
+.imprimir:hover, .imprimir:focus {
+  padding: 1px 12px !important;
+  height: auto;
+  line-height: 35px;
+  color: #757575 !important;
+  background-color: #e1e1e8 !important;
+  border: 1px solid #C1C1C1;
+}
+
+.InputSign {
+  width: 35px;
+  padding-top: 8px;
+  height: auto;
+}
+
+.microSign {
+	font-size: 7px;
+	font-weight: bold;
+}
+
+.inputClass {
+	width: 100%;
+}
+
+label {
+	font-weight: 400;
+}
+
+
+
+.pai-table {
+  border-top: 1px solid #E4E4E4 !important;
+  border-bottom: 1px solid #E4E4E4 !important;
+}
+
+.btn-toolbar {
+  border-top: 1px solid #E4E4E4 !important;
+}
+
+.nav-tabs > li > a {
+  margin-right: 0;
+  border: none;
+  border-radius: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 20px;
+  line-height: 1.9em;
+}
+
+.modal .hr-label {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.form-control{
+  color:#777;
+}
+
+.modal-header{
+  font-weight: 600;
+}
+
+.control-label {
+  font-size: 13px;
+  color: #777;
+  font-weight: 600;
+}
+
+.dropdown-menu > li > a{
+  color:#777;
+}
+
+.popover-content, .popover{
+  background-color: #fafafa;
+}
+
+.popover >.arrow:after{
+  border-bottom-color: #fafafa;
+}
+
+.inputClass{
+  outline: none;
+}
+
+td.situOrcamento { color: #006494; }
+td.situAberta { color: #BB6B00; }
+td.situConcluida { color: #4C9F70; }
+
+.editable-input{
+  outline: none;
+}
+
+.pin-icon {
+		font-size: 8px;
+		position: absolute;
+		left: 20px;
+		bottom: 8px;
+		color: #fff;
+		background: #828282;
+		border-radius: 100%;
+}
+
+.label.relative {
+	position: relative;
+	padding: 5px;
+}
+
+.label.disabled {
+	box-shadow: none;
+	opacity: .65;
+}
+
+.label[data-tooltip]:before {
+	left:0%;
+	line-height:1.2;
+	white-space:normal;
+	width: 200px !important;
+}
+
+.label-default-light {
+	background-color: #c5c5c5;
+}
+
+.badge-top {
+	position: absolute;
+	border-radius: 50%;
+	border: 2px solid;
+	top: -5px;
+	padding: 2px;
+}
+
+.badge-top.success {
+	background: #4CAF50;
+	border-color: #4CAF50;
+}
+
+.badge-top.warning {
+	background: #ff9800;
+	border-color: #ff9800;
+}
+
+
+
+
+/* ------ FULL DIALOG ------ */
+
+.FullDialog{
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+.FullDialog > .modal-dialog {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.FullDialog > .modal-dialog > .modal-content {
+  height: auto;
+  min-height: 100%;
+  border-radius: 0px;
+  background-color: #fafafa;
+}
+
+.FullDialog.bootstrap-dialog .modal-header {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+
+.TinyDialog > .modal-dialog {
+	max-width: 300px;
+}
+
+
+/* ------ FIELDSET ------ */
+.fieldset {
+	background: white;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 4px 0 0 15px;
+}
+
+.fieldsetLabel {
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.fieldset .form-group {
+	margin-bottom: 0;
+}
+
+.fieldset .control-label {
+	font-size: 11px;
+}
+
+
+/*Table
+==========================================================================  */
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #F2F2F2;
+}
+
+.table > thead > tr > th {
+ border-top: none!important;
+ line-height: 45px;
+ color: #757575;
+ padding: 5px 15px;
+}
+
+.table > thead > tr {
+ border-bottom: 1px solid #E7EAEC;
+ box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);
+}
+
+.table > tbody > tr > td {
+ padding: 10px 15px 10px 15px;
+}
+
+.GridMain > table .GridColLeft {
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.table-acao:hover{
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Abas verticais */
+/* =========================================================================== */
+.tab-base{
+	margin:0px;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	border-radius: 4px 4px 0px 0px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.055);
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.tab-base .nav-tabs {
+  width: 20%;
+  border: 0;
+  display: table-cell;
+  vertical-align: top;
+  background: #f8f8f8;
+}
+
+.tab-base .nav-tabs > li{
+  float: none;
+  margin: 0;
+}
+
+.tab-base .nav-tabs > .active > a {
+  border-color: transparent;
+}
+
+.tab-base .nav-tabs > li a {
+  border-right-color: transparent;
+  border-radius: 0 0 0 0;
+}
+
+.tab-base .nav-tabs > li > a {
+  background-color: #F0F2F3;
+  line-height: 45px;
+  color: #757575;
+  font-weight: 600;
+  border-left: 2px solid #E7EAEC !important;
+  border-right: 1px solid #E7EAEC !important;
+  border-bottom: 1px solid #E7EAEC !important;
+  opacity: .7;
+  -webkit-transition: opacity, 0.3s;
+  transition: opacity, 0.3s;
+}
+
+.tab-base .nav-tabs > li.active > a, .tab-base .nav-tabs > li > a:hover  {
+  text-decoration: none;
+  border-left: 2px solid #369836 !important;
+  border-right: 1px solid #fff !important;
+  background: #fff;
+  opacity: 1;
+}
+
+/*Tooltip
+==========================================================================  */
+
+/* Adicione este atributo ao elemento que receberÃ¡ a tooltip */
+[data-tooltip] {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Oculta tooltip - default */
+[data-tooltip]:before, [data-tooltip]:after {
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* PosiÃ§Ã£o - tooltip */
+[data-tooltip]:before {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-bottom: 5px;
+  margin-left: -50px;
+  padding: 7px;
+  /*width: 150px;*/
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.0;
+}
+
+/* Triangulo - tooltip */
+[data-tooltip]:after {
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -5px;
+  width: 0;
+  border-top: 5px solid #000;
+  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: " ";
+  font-size: 0;
+  line-height: 0;
+}
+
+/* Mostrar tooltip - hover */
+[data-tooltip]:hover:before, [data-tooltip]:hover:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+
+/*Botoes
+==========================================================================  */
+
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{
+  outline: none;
+}
+button, a, .btn{
+  font-weight: 600;
+
+}
+.btn-default.active.toggle-off.btn{
+  color: #777;
+}
+
+.btn-menu, .menuFin-btn{
+  background: linear-gradient(#fff, #f5f5f5);
+  background-color: #f5f5f5;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  max-height: 37px;
+  color: #7f7f7f;
+  cursor: pointer;
+  font-size: 1.2em;
+
+}
+
+.mes-btn{
+  font-weight: 600;
+  padding: 9px;
+  margin: 0px 0px 0px 5px;
+  background: linear-gradient(#fff, #f5f5f5);
+  background-color: #f5f5f5;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  max-height: 37px;
+  color: #7f7f7f;
+  cursor: pointer;
+}
+
+.btn-menu:hover, .menuFin-btn:hover, .mes-btn:hover{
+  background: linear-gradient(#fff, #eee);
+  border-color: #d8d8d8;
+  background-color: #f9f9f9;
+  color: #7f7f7f;
+}
+
+.btn-menu:active, .menuFin-btn:active, .mes-btn:active, .mes-btn:active:hover,
+.btn-menu:focus, .menuFin-btn:focus, .mes-btn:focus, .mes-btn:active:focus{
+  background: linear-gradient(#fff, #eee);
+  color: #7f7f7f;
+  border-color: #d8d8d8;
+}
+
+
+/*BOTÃ•ES EXTRAS DO RODAPÃ‰ DO FORM*/
+
+.modal-footer .extraButtons .btnRodape {
+	border: 0;
+	color: white;
+	padding: 8px 16px;
+	font-weight: 600;
+	background-color: #999;
+	border: 1px solid #999;
+}
+
+.modal-footer .extraButtons .btnRodape.dropdown-toggle {
+	padding: 8px 8px;
+}
+
+.modal-footer .extraButtons .btnRodape:focus,
+.modal-footer .extraButtons .btnRodape:hover {
+	opacity: 0.8;
+}
+
+.modal-footer .extraButtons .btnRodape:active {
+	opacity: 0.7;
+}
+
+.modal-footer .extraButtons .btnRodape.btnVerLog {
+	background-color: #ddd;
+	border-color: #adadad;
+	color: #777;
+	margin-right: 5px;
+}
+
+
+/* salvar form */
+
+.buttonSave {
+	color: #fff;
+	background-color: #34A360;
+	font-weight: 600;
+	padding: 8px 16px;
+}
+.buttonSave:hover {
+	color: #fff;
+	background-color: #38AF68;
+}
+.buttonSave:active:focus {
+	color: #fff;
+	background-color: #309659;
+}
+
+/* voltar e preÃ§os sugeridos form */
+
+.buttonBack {
+	color: #7c7c7c;
+	background-color: #eaeaea;
+	border-color: #dddddd;
+	font-weight: 600;
+	padding: 8px 16px;
+}
+
+.buttonBack:hover {
+  color: #7c7c7c;
+  background-color: #f2f2f2;
+  border-color: #dddddd;
+}
+
+.buttonBack:active:focus{
+  color: #7c7c7c;
+  background-color: #d1d1d1;
+  border-color: #dddddd;
+}
+
+
+/* historico, imprimir (no form)*/
+
+.btnVerLog,
+.linkReabrirFin,
+.linkSalvarPadrao,
+.linkRestaurarOriginal,
+.linkPrintRecibo > a,
+.linkPrintVenda > a,
+.linkPrintAjusteEstoque > a,
+.linkPrintCompra > a,
+.buttonFooterModal{
+  padding: 8px;
+  border-radius: 4px;
+  background-color: #ddd;
+  cursor: pointer;
+  margin-right: 10px;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.btnVerLog,
+.linkReabrirFin,
+.linkSalvarPadrao,
+.linkRestaurarOriginal,
+.linkPrintRecibo > a,
+.linkPrintVenda > a,
+.linkPrintAjusteEstoque > a,
+.linkPrintCompra > a,
+.buttonFooterModal a{
+  color: #777;
+  text-decoration: none;
+
+}
+
+.btnVerLog:hover, .btnVerLog:focus,
+.linkReabrirFin:hover, .linkReabrirFin:focus,
+.linkSalvarPadrao:hover, .linkSalvarPadrao:focus,
+.linkRestaurarOriginal:hover, .linkRestaurarOriginal:focus,
+.linkPrintRecibo > a:hover, .linkPrintRecibo > a:focus,
+.linkPrintVenda > a:hover, .linkPrintVenda > a:focus,
+.linkPrintAjusteEstoque > a:hover, .linkPrintAjusteEstoque > a:focus,
+.linkPrintCompra > a:hover, .linkPrintCompra > a:focus,
+.buttonFooterModal:focus{
+  background-color: #cecece;
+  color: #777;
+  text-decoration: none;
+}
+
+.btnVerLog:active,
+.linkReabrirFin:active,
+.linkSalvarPadrao:active,
+.linkRestaurarOriginal:active,
+.linkPrintRecibo > a:active,
+.linkPrintVenda > a:active,
+.linkPrintAjusteEstoque > a:active,
+.linkPrintCompra > a:active,
+.buttonFooterModal:active {
+  background-color: #c1c1c1;
+
+}
+
+
+.defaultRemBtn {
+	background-color: #d9534f;
+	border-color: #d43f3a;
+	padding: 8px;
+	border-radius: 4px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 1.1em;
+}
+
+.defaultRemBtn:hover {
+	background-color: #C9302C;
+}
+
+.defaultRemBtn:active {
+	-webkit-box-shadow: inset -1px 0px 28px 16px rgba(50, 50, 50, 0.16);
+	-moz-box-shadow: inset -1px 0px 28px 16px rgba(50, 50, 50, 0.16);
+	box-shadow: inset -1px 0px 28px 16px rgba(50, 50, 50, 0.16);
+}
+
+
+/* = buttonSave (mudar classes) */
+.btn-success {
+  color: #fff;
+  background-color: #34A360;
+  font-weight: 600;
+  border-color: #34A360;
+}
+
+.btn-success:hover {
+  color: #fff;
+  background-color: #38AF68;
+  border-color: #38AF68;
+}
+
+.btn-success:active {
+  color: #fff;
+  background-color: #309659;
+  border-color: #309659;
+}
+
+.btn-success:focus,
+.btn-success:focus:active,
+.btn-success:hover:active{
+  color: #fff;
+  background-color: #309659;
+  border-color: #309659;
+
+}
+
+
+/* = buttonBack (mudar classes) */
+.btn-danger, .btn-info {
+  color: #7c7c7c;
+  background-color: #eaeaea;
+  border-color: #dddddd;
+  font-weight: 600;
+}
+
+.btn-danger:hover,
+.btn-info:hover {
+  color: #7c7c7c;
+  background-color: #f2f2f2;
+  border-color: #dddddd;
+}
+
+.btn-danger:active,
+.btn-info:active{
+  color: #7c7c7c;
+  background-color: #d1d1d1;
+  border-color: #dddddd;
+}
+
+.btn-danger:focus,
+.btn-danger:focus:active,
+.btn-danger:active:hover,
+.btn-info:focus,
+.btn-info:focus:active,
+.btn-info:active:hover{
+  color: #7c7c7c;
+  background-color: #f2f2f2;
+  border-color: #dddddd;
+}
+
+
+
+
+
+/*Alertas
+==========================================================================  */
+
+.alert-warning, .alert-danger, .alert-success, .alert-info {
+  border-color: rgba(44, 62, 80, 0.85);
+  background-color: rgba(44, 62, 80, 0.85);
+  background: rgba(44, 62, 80, 0.85);
+  padding: 20px;
+  color: #fff;
+}
+.alert-warning .btn, .alert-danger .btn, .alert-success .btn, .alert-info .btn{
+  background-color: #E74C3C;
+  color: #f7f7f7;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  min-width: 100px;
+  font-weight: 600;
+}
+.alert-warning .btn:hover, .alert-danger .btn:hover, .alert-success .btn:hover, .alert-info .btn:hover{
+  color: #e8e8e8;
+  background: #db4939;
+}
+
+
+/* Box ligamos para vocÃª
+============================================*/
+#boxTelefonarLista{
+  position: fixed;
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #f5f5f7;
+  border-top: 1px solid #d3d3d3;
+  padding: 5px 10px;
+  z-index: 50;
+}
+#boxTelefonarLista p{
+  color: #777;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#boxTelefonarLista .botao{
+  display: inline-block;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+#boxTelefonarLista a{
+  color: #fff;
+  padding: 8px 12px;
+  background-color: #3bba6e;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+
+}
+#boxTelefonarLista a .fa-phone{
+  font-size: 1.2em;
+  padding: 0 5px;
+}
+
+
+/* =============================================
+  ESTILOS SOMENTE PARA IE9, IE10, IE11
+  (talvez ir pra CSS GLOBAL)
+  ===============================================*/
+
+  @media screen and (min-width:0\0) {
+    .ArrowSelect{
+      display: none;
+    }
+  }
+
+
+/*================================================
+MEDIAS QUERIES COMUNS EM TODOS
+==================================================*/
+
+
+@media (max-width: 479px){}
+
+@media (max-width: 592px){}
+
+@media (min-width:480px) and (max-width: 767px){}
+
+@media (min-width:768px) and (max-width:991px){}
+
+@media (min-width:992px) and (max-width:1199px){}
+
+@media (min-width:1200px){}
+
+/**
+ * NotificaÃ§Ãµes
+ */
+
+.human-time {
+	display: block;
+	font-style: italic;
+	font-size: 80%;
+}
+
+a.notificacoes-link:hover {
+	color: #fff !important;
+}
+
+.notificacoes-titulo {
+	color: #fff !important;
+}
+
+table.notificacoes-align {
+	margin-bottom: 25px;
+	margin-top: 15px;
+	box-shadow: 0px 0px 5px 0px rgba(148,148,148,1);
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(148,148,148,1);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(148,148,148,1);
+}
+
+table.notificacoes-align > tbody > tr:hover {
+    background: rgba(23, 163, 152, 0.3);
+}
+
+table.notificacoes-align th, table.notificacoes-align td {
+	text-align: left;
+}
+
+table.notificacoes-align td:nth-child(1) {
+	text-align: right;
+	width:60px;
+}
+
+table.notificacoes-align th:nth-child(1) {
+	text-align: center;
+}
+
+div.notificacoes.alert {
+	border: 0;
+}
+
+div.notificacoes.alert.alert-success {
+	color: #1B5E20;
+	background-color: #E8F5E9;
+}
+
+div.notificacoes.alert.alert-warning {
+    background-color: #FFCCBC;
+    color: #C62828;
+}
+
+div.notificacoes.alert.alert-info {
+	color: #0D47A1;
+	background-color: #E3F2FD;
+}
+
+
+@media only screen and (max-width: 320px) {
+	table.notificacoes-align td:nth-child(1) {
+		text-align: center;
+	}
+}
+
+.font-size-15 {
+	font-size: 15px !important;
+}
+
+.warningCloseIcon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #e2e2e2;
+}
+
+.warningCloseIcon:hover {
+  color: white;
+}
+#loadingOverlay {
+	display: none !important;
+}
+
+div[closeonclick="0"]{
+    resize: both;
+    overflow: hidden;
+}
+.linkAbrirTreinamento:not(.hidden-sm) {
+	margin: 15px;
+	padding: 7px 17px !important;
+  z-index: 0;
+}
+.linkAbrirTreinamento {
+	padding-left: 11px !important;
+	padding-right: 11px !important;
+  z-index: 0;
+}
